@@ -11,6 +11,7 @@ html {
 
 body {
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 .header {
@@ -32,6 +33,17 @@ body {
     top: 5%;
     left: 50%;
     transform: translateX(-50%);
+    z-index: 1;
+    &__text {
+      font-size: 2rem;
+      font-weight: bold;
+      text-align: center;
+      text-transform: uppercase;
+      font-style: italic;
+    }
+    &__image--inactive {
+      display: none;
+    }
   }
   .menu-button {
     position: relative;
@@ -40,6 +52,7 @@ body {
     height: 60px;
     border: none;
     background-color: #000;
+    z-index: 1;
     div {
       position: absolute;
       top: 50%;
@@ -70,6 +83,36 @@ body {
       background-color: #fff;
     }
   }
+  .menu {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    margin-top: 60px;
+    padding: 20px 0;
+    font-size: 1.8rem;
+    background-color: #000;
+    text-align: center;
+    text-transform: uppercase;
+    &__item-list {
+      list-style: none;
+    }
+    &__item {
+      margin-bottom: 20px;
+      color: #fff;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+    &__link {
+      color: #fff;
+      text-decoration: none;
+    }
+  }
+  .menu--active {
+    display: block;
+  }
 }
 
 .home-page {
@@ -89,6 +132,8 @@ body {
     }
     .home-page__img {
       display: block;
+      width: auto;
+      height: 100%;
     }
   }
   &__content {
@@ -96,6 +141,7 @@ body {
     flex-wrap: wrap;
     flex-basis: 100%;
     align-items: center;
+    align-content: space-between;
     justify-content: center;
     max-height: 100vh;
     padding: 25px 15px 0;
@@ -105,24 +151,36 @@ body {
     }
     .home-page__text {
       flex-basis: 100%;
+      @media (min-width: 1024px) {
+        margin-top: 25rem;
+      }
 
       &--small {
         flex-basis: 100%;
         margin-bottom: 5px;
-        font-size: 14px;
+        font-size: 1.4rem;
         text-transform: uppercase;
+        @media (min-width: 1024px) {
+          font-size: 2.4rem;
+        }
       }
       &--medium {
         flex-basis: 100%;
         margin-bottom: 5px;
         font-size: 2.4rem;
         text-transform: uppercase;
+        @media (min-width: 1024px) {
+          font-size: 3.2rem;
+        }
       }
       &--big {
         flex-basis: 100%;
         margin-bottom: 25px;
         font-size: 30px;
         text-transform: uppercase;
+        @media (min-width: 1024px) {
+          font-size: 3.8rem;
+        }
       }
       .offer-btn {
         padding: 12px 22px;
@@ -157,4 +215,8 @@ body {
       }
     }
   }
+}
+
+.page--active {
+  transform: translate3d(0px, 75%, -200px);
 }
