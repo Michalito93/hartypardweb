@@ -29,7 +29,9 @@ body {
     right: 0;
   }
   .logo {
+    position: relative;
     flex-basis: calc(100% - 60px);
+    min-width: 300px;
     height: 60px;
     background-color: $blue;
     z-index: 3;
@@ -47,16 +49,16 @@ body {
       &--active {
         opacity: 1;
       }
-      @media (min-width: 1024px) {
-        line-height: 30px;
-      }
     }
     &__image {
-      display: block;
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      opacity: 1;
       margin: 0 auto;
     }
     &__image--inactive {
-      display: none;
+      opacity: 0;
     }
   }
   .menu-button {
@@ -162,11 +164,8 @@ body {
   }
 }
 
-.page--select {
-  transform: translate3d(0px, 50%, -200px);
-}
-
 .home-page {
+  position: absolute;
   display: flex;
   flex-wrap: wrap;
   min-height: 100vh;
@@ -200,6 +199,7 @@ body {
     padding: 25px 15px 0;
     text-align: center;
     background-color: #fff;
+    z-index: 1;
     @media (min-width: 1024px) {
       flex-basis: 70%;
     }
@@ -230,7 +230,7 @@ body {
       &--big {
         flex-basis: 100%;
         margin-bottom: 25px;
-        font-size: 30px;
+        font-size: 3rem;
         text-transform: uppercase;
         @media (min-width: 1024px) {
           font-size: 3.8rem;
@@ -269,4 +269,40 @@ body {
       }
     }
   }
+}
+
+.about-page {
+  position: absolute;
+  display: none;
+  flex-wrap: wrap;
+  min-height: 100vh;
+  padding-top: 150px;
+  background-color: #fff;
+  transition: 0.3s linear;
+  z-index: -1;
+  &__title {
+    flex-basis: 100%;
+    margin: 0 80px 30px 80px;
+    border-bottom: 10px solid $pink;
+    text-align: center;
+    font-size: 3rem;
+    text-transform: uppercase;
+  }
+  &__img {
+    margin: 0 auto 30px;
+  }
+  &__text {
+    margin: 0 40px;
+    font-size: 1.8rem;
+    line-height: 1.5;
+  }
+}
+
+.home-page--select {
+  transform: translate3d(0px, 50%, -300px);
+}
+
+.about-page--select {
+  transform: translate3d(0px, 50%, -200px);
+  display: flex;
 }
