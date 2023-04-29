@@ -21,13 +21,17 @@ const openMenu = () => {
 };
 
 const chooseHome = () => {
+  homePage.classList.add("page--active");
   homePage.style.zIndex = "1";
+  aboutPage.classList.remove("page--active");
   aboutPage.style.zIndex = "0";
   openMenu();
 };
 
 const chooseAbout = () => {
+  aboutPage.classList.add("page--active");
   aboutPage.style.zIndex = "1";
+  homePage.classList.remove("page--active");
   homePage.style.zIndex = "0";
   openMenu();
 };
