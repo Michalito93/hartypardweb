@@ -133,7 +133,7 @@ body {
     background-color: $darkGray;
     text-align: center;
     text-transform: uppercase;
-    z-index: 2;
+    z-index: 0;
     transition: 0.3s linear;
     &__item-list {
       max-width: 400px;
@@ -160,6 +160,7 @@ body {
   }
   .menu--active {
     opacity: 1;
+    z-index: 2;
   }
 }
 
@@ -316,17 +317,46 @@ body {
   }
 }
 
+.offer-page {
+  position: absolute;
+  display: none;
+  flex-wrap: wrap;
+  min-height: 100vh;
+  padding-top: 150px;
+  background-color: #fff;
+  transition: 0.3s linear;
+  &__headline {
+    flex-basis: 100%;
+    margin: 0 80px 30px 80px;
+    text-align: center;
+    font-size: 3rem;
+    text-transform: uppercase;
+    @media (min-width: 1024px) {
+      text-align: left;
+    }
+  }
+}
+
 .page--active {
   display: flex;
 }
 
 .home-page--select {
-  transform: translate3d(0px, 32%, -200px);
+  transform: translate3d(0px, 45%, -200px);
   display: flex;
+  z-index: 6;
 }
 
 .about-page--select {
-  transform: translate3d(0px, 20%, -230px);
+  transform: translate3d(0px, 56%, -230px);
   display: flex;
   height: 100vh;
+  z-index: 5;
+}
+
+.offer-page--select {
+  transform: translate3d(0px, 50%, -260px);
+  display: flex;
+  height: 100vh;
+  z-index: 4;
 }
