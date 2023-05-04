@@ -321,6 +321,7 @@ body {
   position: absolute;
   display: none;
   flex-wrap: wrap;
+  justify-content: center;
   min-height: 100vh;
   padding-top: 150px;
   background-color: #fff;
@@ -334,6 +335,21 @@ body {
     @media (min-width: 1024px) {
       text-align: left;
     }
+  }
+  &__list {
+    list-style: none;
+  }
+  &__item {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    width: 300px;
+    margin-bottom: 50px;
+  }
+  &__icon {
+  }
+  &__name {
+    font-size: 1.4rem;
   }
 }
 
