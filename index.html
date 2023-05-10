@@ -69,7 +69,7 @@
             I zapraszam Cię do mojego świata
           </h4>
           <h1 class="home-page__text--big">Harty Pard Dekoracje</h1>
-          <button class="offer-btn">Oferta</button>
+          <button class="btn offer-btn">Oferta</button>
         </div>
         <div class="social">
           <i class="social__icon fa-brands fa-instagram"></i>
@@ -225,8 +225,60 @@
           <p class="offer-page__name">Studniówki/ Półmetki/ Komersy</p>
         </li>
       </ul>
-      <button class="offer-btn">Szczegółowa oferta</button>
+      <div class="offer-page__btn-container">
+        <button class="btn offer-btn">Szczegółowa oferta</button>
+      </div>
     </section>
+
+    <section class="contact-page">
+      <h1 class="contact-page__headline">Kontakt</h1>
+      <form action="mail.php" method="post" class="contact-page__form">
+        <div class="contact-page__container">
+          <label for="name" class="contact-page__label">Imię:</label>
+          <input
+            type="text"
+            name="name"
+            id="name"
+            class="contact-page__input"
+            required
+          />
+        </div>
+        <div class="contact-page__container">
+          <label for="email" class="contact-page__label">Email:</label>
+          <input
+            type="email"
+            name="email"
+            id="email"
+            class="contact-page__input"
+            required
+          />
+        </div>
+        <div class="contact-page__container">
+          <label for="email" class="contact-page__label">Numer telefonu:</label>
+          <input
+            type="number"
+            name="number"
+            id="number"
+            class="contact-page__input"
+            required
+          />
+        </div>
+        <div class="contact-page__container">
+          <label for="name" class="contact-page__label">Wiadomość:</label>
+          <textarea
+            name="msg"
+            id="msg"
+            class="contact-page__textarea"
+            required
+          ></textarea>
+        </div>
+        <div class="contact-page__container">
+          <button class="btn msg-btn">Wyślij</button>
+        </div>
+      </form>
+      <p class="msg-status"></p>
+    </section>
+
     <script src="main.js"></script>
   </body>
 </html>

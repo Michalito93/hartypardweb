@@ -338,9 +338,65 @@ body {
   &__name {
     font-size: 1.4rem;
   }
+  &__btn-container {
+    flex-basis: 100%;
+    text-align: center;
+  }
 }
 
-.offer-btn {
+.contact-page {
+  position: absolute;
+  display: none;
+  flex-wrap: wrap;
+  justify-content: center;
+  width: 100vw;
+  min-height: 100vh;
+  padding-top: 150px;
+  background-color: $pink;
+  transition: 0.3s linear;
+  &__headline {
+    flex-basis: 100%;
+    margin: 0 80px 30px 80px;
+    text-align: center;
+    font-size: 3rem;
+    text-transform: uppercase;
+    @media (min-width: 1024px) {
+      text-align: left;
+    }
+  }
+  &__form {
+    width: 90%;
+    max-width: 600px;
+  }
+  &__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 40px 0;
+  }
+  &__label {
+    margin-bottom: 10px;
+    font-size: 1.6rem;
+  }
+  &__input {
+    padding: 15px;
+    font-size: 1.6rem;
+    font-family: inherit;
+    border: 1px solid $darkGray;
+    border-radius: 8px;
+  }
+  &__textarea {
+    min-height: 150px;
+    padding: 15px;
+    font-size: 1.6rem;
+    font-family: inherit;
+    border: 1px solid $darkGray;
+    border-radius: 8px;
+    resize: vertical;
+  }
+}
+
+.btn {
   padding: 12px 22px;
   font-size: 1.4rem;
   margin-bottom: 20px;
@@ -380,4 +436,11 @@ body {
   display: flex;
   height: 100vh;
   z-index: 4;
+}
+
+.contact-page--select {
+  transform: translate3d(0px, 50%, -260px);
+  display: flex;
+  height: 100vh;
+  z-index: 3;
 }
