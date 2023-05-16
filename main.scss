@@ -394,6 +394,31 @@ body {
     border-radius: 8px;
     resize: vertical;
   }
+  .msg-status {
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50px;
+    width: 250px;
+    padding: 15px;
+    border-radius: 12px;
+    font-size: 1.6rem;
+    text-align: center;
+    z-index: 10;
+  }
+  .success {
+    display: flex;
+    border: 2px solid #63c666;
+    background-color: #fff;
+    color: #63c666;
+  }
+  .error {
+    display: flex;
+    border: 2px solid #f15d5d;
+    background-color: #fff;
+    color: #f15d5d;
+  }
 }
 
 .btn {

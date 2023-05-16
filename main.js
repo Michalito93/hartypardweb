@@ -10,6 +10,7 @@ const homeLink = document.querySelector("[data-name='home']");
 const aboutLink = document.querySelector("[data-name='about']");
 const offerLink = document.querySelector("[data-name='offer']");
 const contactLink = document.querySelector("[data-name='contact']");
+const msgStatus = document.querySelector(".msg-status");
 
 const openMenu = () => {
   menu.classList.toggle("menu--active");
@@ -57,6 +58,24 @@ const chooseContact = () => {
   offerPage.classList.remove("page--active");
   openMenu();
 };
+
+if (document.location.search === "?mail_status=sent") {
+  msgStatus.classList.add("success");
+  msgStatus.textContent = "Wiadomość została wysłana. Dziękuję :)";
+
+  setTimeout(() => {
+    msgStatus.classList.remove("success");
+  }, 3000);
+}
+
+if (document.location.search === "?mail_status=error") {
+  msgStatus.classList.add("error");
+  msgStatus.textContent = "Coś poszło nie tak :(";
+
+  setTimeout(() => {
+    msgStatus.classList.remove("error");
+  }, 3000);
+}
 
 menuBtn.addEventListener("click", openMenu);
 homeLink.addEventListener("click", chooseHome);
