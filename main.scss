@@ -377,6 +377,12 @@ body {
   &__label {
     margin-bottom: 10px;
     font-size: 1.6rem;
+    font-weight: bold;
+    &--checkbox {
+      font-weight: normal;
+      margin-left: 10px;
+      line-height: 1.5;
+    }
   }
   &__input {
     padding: 15px;
@@ -393,6 +399,9 @@ body {
     border: 1px solid $darkGray;
     border-radius: 8px;
     resize: vertical;
+  }
+  &__list {
+    list-style: none;
   }
   .msg-status {
     display: none;
